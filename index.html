@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gag Pet Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Gag Pet Tracker</h1>
+  <form id="petForm">
+    <input type="text" id="petName" placeholder="Pet Name" required />
+    <button type="submit">Add Pet</button>
+  </form>
+  <ul id="petList"></ul>
+
+  <script src="script.js" type="module"></script>
+  
+<!-- Firebase App (the core Firebase SDK) -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getDatabase, ref, push, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAWnntTQF-QullnSup0upgqBZBD2L97MVI",
+    authDomain: "gag-pet-tracker-a5b6a.firebaseapp.com",
+    projectId: "gag-pet-tracker-a5b6a",
+    storageBucket: "gag-pet-tracker-a5b6a.firebasestorage.app",
+    messagingSenderId: "82791063841",
+    appId: "1:82791063841:web:25464efef316c1211f1e60",
+    measurementId: "G-N9Z7D81Y0X"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+
+  window.firebaseDB = database;
+  window.firebaseRef = ref;
+  window.firebasePush = push;
+  window.firebaseSet = set;
+  window.firebaseOnValue = onValue;
+</script>
+
+</body>
+</html>
